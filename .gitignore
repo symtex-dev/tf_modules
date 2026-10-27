@@ -1,0 +1,39 @@
+# Terraform/Terragrunt generated files (at any depth).
+.terraform/
+.terragrunt-cache/
+.terraform.tfstate.lock.info
+*.tfstate
+*.tfstate.*
+*.tfplan
+*.tfplan.*
+*.plan
+crash.log
+crash.*.log
+**/.terraform.lock.hcl
+!/.terraform.lock.hcl
+
+# Local configuration and secrets. Keep sanitized examples versioned.
+*.tfvars
+*.tfvars.json
+!*.example.tfvars
+!*.example.tfvars.json
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraformrc
+terraform.rc
+.env
+.env.*
+!.env.example
+
+# Tool caches and editor/OS leftovers.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.cache/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
