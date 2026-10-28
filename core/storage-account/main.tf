@@ -13,3 +13,11 @@ resource "azurerm_storage_account" "this" {
   default_to_oauth_authentication = true
   tags                            = var.tags
 }
+
+resource "azurerm_storage_container" "this" {
+  for_each = var.containers
+
+  name                  = each.key
+  storage_account_id    = azurerm_storage_account.this.id
+  container_access_type = "private"
+}

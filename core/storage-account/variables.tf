@@ -46,3 +46,14 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "containers" {
+  description = "Optional set of private blob container names to create. Requires data-plane connectivity from the caller when the account is private-only."
+  type        = set(string)
+  default     = []
+
+  validation {
+    condition     = alltrue([for c in var.containers : can(regex("^[a-z0-9]([a-z0-9]|-[a-z0-9]){2,62}$", c))])
+    error_message = "Container names must be 3-63 characters: lowercase letters, digits, and single hyphens, starting and ending with a letter or digit."
+  }
+}
