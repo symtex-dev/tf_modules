@@ -4,6 +4,9 @@ Reusable Azure Terraform modules are grouped by purpose:
 
 - [`core/`](./core/) contains shared infrastructure modules, including
   network composition, governance, and resource modules.
+- [`azuread/`](./azuread/) contains app registration and
+  [IAM role modules](./azuread/iam/) for Owner, Contributor, Storage Blob Data
+  Owner, and Storage Blob Data Contributor assignments.
 - [`booking-engine/`](./booking-engine/) contains workload-specific modules.
 - [`websites/`](./websites/) contains website, DNS, and Front Door modules.
 
