@@ -1,3 +1,4 @@
+
 variable "prefix" {
   description = "Prefix used to construct the static web app name."
   type        = string

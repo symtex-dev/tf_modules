@@ -35,7 +35,7 @@ run "create_dns_zone" {
   command = apply
 
   module {
-    source = "../dns_zone"
+    source = "../../core/dns_zone"
   }
 
   variables {
