@@ -8,7 +8,7 @@ removed {
 }
 
 module "vnet" {
-  source = "../../modules/vnet"
+  source = "../../core/vnet"
 
   name                = var.name
   resource_group_name = var.resource_group_name
@@ -19,7 +19,7 @@ module "vnet" {
 }
 
 module "nsg" {
-  source = "../../modules/nsg"
+  source = "../../core/nsg"
 
   name                = "${var.name}-nsg"
   resource_group_name = var.resource_group_name
@@ -28,7 +28,7 @@ module "nsg" {
 }
 
 module "security_rules" {
-  source = "../../modules/security-rule"
+  source = "../../core/security-rule"
 
   resource_group_name         = var.resource_group_name
   network_security_group_name = module.nsg.name
@@ -36,7 +36,7 @@ module "security_rules" {
 }
 
 module "route_table" {
-  source = "../../modules/route-table"
+  source = "../../core/route-table"
   # An empty map creates no module; otherwise one instance is keyed "network".
   for_each = var.route_table == null ? {} : { network = var.route_table }
 
@@ -49,7 +49,7 @@ module "route_table" {
 }
 
 module "subnets" {
-  source = "../../modules/subnet"
+  source = "../../core/subnet"
   # Map keys give subnets stable Terraform addresses and become their names.
   for_each = var.subnets
 
@@ -67,7 +67,7 @@ module "subnets" {
 }
 
 module "peering" {
-  source = "../../modules/peer-vpn"
+  source = "../../core/peer-vpn"
   # Map the child's remote provider to the caller's hub subscription provider.
   providers = {
     azurerm        = azurerm
