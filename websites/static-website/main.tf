@@ -1,5 +1,5 @@
 resource "azurerm_static_web_app" "this" {
-  name                = "smtx-${var.prefix}"
+  name                = "${var.prefix}"
   resource_group_name = var.resource_group_name
   location            = var.location
 

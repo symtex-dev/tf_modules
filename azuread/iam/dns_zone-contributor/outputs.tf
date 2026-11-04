@@ -1,0 +1,4 @@
+output "ids" {
+  description = "DNS Zone Contributor role assignment IDs keyed by caller-chosen names."
+  value       = module.role_assignments.ids
+}
