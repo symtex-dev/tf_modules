@@ -62,7 +62,6 @@ variable "postgres_password" {
 variable "acr_server" {
   description = "Container registry server hostname."
   type        = string
-  default     = "smtxacr.azurecr.io"
 }
 
 variable "acr_username" {

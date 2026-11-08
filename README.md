@@ -40,6 +40,8 @@ Additional shared modules:
 | [monitoring](./core/monitoring/) | Log Analytics and workspace-backed Application Insights |
 | [private-dns-zone](./core/private-dns-zone/) | Private DNS zone and named VNet links |
 | [private-endpoint](./core/private-endpoint/) | Private Link connection and optional existing DNS zone association |
+| [point-to-site-vpn](./core/point-to-site-vpn/) | Entra-authenticated OpenVPN gateway and GatewaySubnet for an existing hub VNet |
+| [linux-vm](./core/linux-vm/) | Linux VM with SSH-key authentication and an existing subnet |
 
 New modules require Terraform >= 1.6 and AzureRM 4.x. Mock-provider tests require
 Terraform >= 1.7. Existing workload modules remain unchanged.
