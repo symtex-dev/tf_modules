@@ -35,6 +35,8 @@ resource "azurerm_linux_virtual_machine" "this" {
   source_image_id                 = var.source_image_id
   tags                            = var.tags
 
+  custom_data = var.custom_data
+
   admin_ssh_key {
     username   = var.admin_username
     public_key = var.ssh_public_key
