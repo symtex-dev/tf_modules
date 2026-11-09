@@ -108,6 +108,12 @@ variable "os_disk" {
   default = {}
 }
 
+variable "custom_data" {
+  description = "Base64-encoded cloud-init configuration. Do not include secrets."
+  type        = string
+  default     = null
+}
+
 variable "tags" {
   description = "Tags applied to the VM, NIC, and optional public IP."
   type        = map(string)
